@@ -148,7 +148,7 @@ const PJYSDK = (function(){
       params["app_key"] = this._app_key;
 
       method = method.toUpperCase();
-      let url = this._protocol + ":
+      let url = this._protocol + "://" + this._host + path
       let max_retries = this._retry_count;
       let retries_count = 0;
 
