@@ -879,7 +879,8 @@ win.id_6_click.on("click", () => {
     en[i].forceStop()
    }
   }
-  app.launchApp("necro助手");
+  var intent = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
+context.startActivity(intent);
     img_down();
 })
 
