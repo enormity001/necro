@@ -573,6 +573,8 @@ pjysdk.debug = false;
 let reg = /[蹭地工积车片友收自悬]/g
 let storage2 = storages.create("pref");
 let card_pass = storage2.get("cardpass",null);
+storage2.put("versionret", pjysdk.GetSoftwareLatestVersion());
+storage2.put("notice", pjysdk.GetRemoteVar("notice").result.value);
 pjysdk.event.on("heartbeat_failed", function(hret) {
       log("心跳失败，尝试重登...")
       sleep(2000);
