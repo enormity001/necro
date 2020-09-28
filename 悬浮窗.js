@@ -367,86 +367,86 @@ win_1.logo.setOnTouchListener(function (view, event) {
 
 
 var w = floaty.rawWindow(
-    <frame id = "off" w = "*" h = "*">
-    <vertical  h = "300" w = "300" >
-        <card cardBackgroundColor = "#FEFEEF" cardCornerRadius = "7"  foreground="?selectableItemBackground">
-        <horizontal>
-        <text id = "t4" text = "设置" w = "50" gravity = "center" layout_weight = "1" bg ="#C4F6F6"/>
-        <text id = "t0" text = "日常" w = "50" gravity = "center" layout_weight = "1" />
-        <text id = "t1" text = "会战" w = "50" gravity = "center" layout_weight = "1"/>
-        <text id = "t2" text = "收集" w = "50" gravity = "center" layout_weight = "1"/>
-        <text id = "t3" text = "积分" w = "50" gravity = "center" layout_weight = "1"/>
-        </horizontal>
-        </card>
-    <viewpager id="viewpager" marginTop = "5">
-      <horizontal  id = "f5" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "*">
-        
-      </horizontal>
+  <frame id = "off" w = "*" h = "*">
+  <vertical  h = "300" w = "300" >
+      <card cardBackgroundColor = "#FEFEEF" cardCornerRadius = "7"  foreground="?selectableItemBackground">
       <horizontal>
-        <vertical>
-          <radiogroup id = "r1" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100" >
-            <radio  text = "一键日常" textColor="black" checked = "true" />
-            <radio  text = "自开hell"  textColor="black" />
-            <radio  text = "蹭小号"  textColor="black" />
-            <radio  text = "芯片本"  textColor="black" />
-            <radio  text = "日常蹭车"  textColor="black" />
-            <button id = "b1" text = "开始" h = "auto" layout_gravity = "center_horizontal"  />
-          </radiogroup>
-        </vertical>
-        <frame id = "f1"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
-  
-        </frame>
+      <text id = "t4" text = "设置" w = "50" gravity = "center" layout_weight = "1" bg ="#C4F6F6"/>
+      <text id = "t0" text = "日常" w = "50" gravity = "center" layout_weight = "1" />
+      <text id = "t1" text = "会战" w = "50" gravity = "center" layout_weight = "1"/>
+      <text id = "t2" text = "收集" w = "50" gravity = "center" layout_weight = "1"/>
+      <text id = "t3" text = "积分" w = "50" gravity = "center" layout_weight = "1"/>
       </horizontal>
-      <horizontal>
-        <vertical>
-          <radiogroup  id = "r2" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
-            <radio text = "会战蹭车" textColor="black" checked = "true" />
-            <radio text = "自开" textColor="black" />
-            <radio text = "刷票" textColor="black" />
-            <radio  text = "蹭小号"  textColor="black" />
-            <button id = "b2" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
-          </radiogroup>
-        </vertical>
-        <frame id = "f2"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
-  
-        </frame>
-      </horizontal>
-      <horizontal>
-        <vertical>
-          <radiogroup  id = "r3" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
-            <radio text = "材料1" textColor="black" checked = "true"/>
-            <radio text = "材料2" textColor="black" />
-            <radio text = "装备本" textColor="black" />
-            <radio text = "黄蓝门票周回" textColor="black" />
-            <radio text = "红材料换金币" textColor="black" />
-            <radio text = "自动推图" textColor="black" />
-            <radio text = "收集(旧)" textColor="black" />
-            <button id = "b3" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
-          </radiogroup>
-        </vertical>
-        <frame id = "f3"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
-  
-        </frame>
-      </horizontal>
-      <horizontal>
-        <vertical>
-          <radiogroup  id = "r4" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
-            <radio text = "积分" textColor="black" checked = "true"/>
-            <radio text = "自动推图" textColor="black" />
-            <radio text = "积分(旧)" textColor="black" />
-            <button  id = "b4" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
-          </radiogroup>
-        </vertical>
-        <frame id = "f4"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
-  
-        </frame>
-      </horizontal>
-     
-    </viewpager>
-    </vertical>
-    </frame>
-    );
-  
+      </card>
+  <viewpager id="viewpager" marginTop = "5">
+    <horizontal  id = "f5" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "*">
+      
+    </horizontal>
+    <horizontal>
+      <vertical>
+        <radiogroup id = "r1" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100" >
+          <radio  text = "一键日常" textColor="black" checked = "true" />
+          <radio  text = "自开hell"  textColor="black" />
+          <radio  text = "蹭小号"  textColor="black" />
+          <radio  text = "芯片本"  textColor="black" />
+          <radio  text = "日常蹭车"  textColor="black" />
+          <button id = "b1" text = "开始" h = "auto" layout_gravity = "center_horizontal"  />
+        </radiogroup>
+      </vertical>
+      <frame id = "f1"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
+
+      </frame>
+    </horizontal>
+    <horizontal>
+      <vertical>
+        <radiogroup  id = "r2" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
+          <radio text = "会战蹭车" textColor="black" checked = "true" />
+          <radio text = "自开" textColor="black" />
+          <radio text = "刷票" textColor="black" />
+          <radio  text = "蹭小号"  textColor="black" />
+          <button id = "b2" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
+        </radiogroup>
+      </vertical>
+      <frame id = "f2"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
+
+      </frame>
+    </horizontal>
+    <horizontal>
+      <vertical>
+        <radiogroup  id = "r3" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
+          <radio text = "材料1" textColor="black" checked = "true"/>
+          <radio text = "材料2" textColor="black" />
+          <radio text = "装备本" textColor="black" />
+          <radio text = "黄蓝门票周回" textColor="black" />
+          <radio text = "红材料换金币" textColor="black" />
+          <radio text = "自动推图" textColor="black" />
+          <radio text = "收集(旧)" textColor="black" />
+          <button id = "b3" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
+        </radiogroup>
+      </vertical>
+      <frame id = "f3"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
+
+      </frame>
+    </horizontal>
+    <horizontal>
+      <vertical>
+        <radiogroup  id = "r4" bg = "#FDFDF0" alpha = "0.8"  h = "300" w = "100">
+          <radio text = "积分" textColor="black" checked = "true"/>
+          <radio text = "自动推图" textColor="black" />
+          <radio text = "积分(旧)" textColor="black" />
+          <button  id = "b4" text = "开始"   h = "auto" layout_gravity = "center_horizontal" textColor = "#000000" />
+        </radiogroup>
+      </vertical>
+      <frame id = "f4"  bg = "#EFF8FE" alpha="0.8" h = "*" layout_weight = "1" >
+
+      </frame>
+    </horizontal>
+   
+  </viewpager>
+  </vertical>
+  </frame>
+  );
+
     w.off.setVisibility(8)
       
       
