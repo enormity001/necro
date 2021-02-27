@@ -1,1 +1,277 @@
-events.on("exit",function(){events.broadcast.emit("done",0)}),auto.waitFor(),images.requestScreenCapture(),sleep(300);var storage=storages.create("pref"),xoff=leftBlack()-246,gachaflag=!0,flag=!0,gachatime=storage.get("gachatime",null);if(!gachatime){var b=new Date,c=b.getFullYear(),d=b.getMonth(),e=b.getDate(),gachatime=Date.parse(new Date(c,d,e,4));storage.put("gachatime",gachatime)}if(Date.parse(new Date)>gachatime){for(threads.start(function(){for(sleep(111);;){var b=images.read("./reline.jpg");if(flag){flag=!1;try{var c=images.findImageInRegion(captureScreen(),b,1442+xoff,710,87,41)}catch(g){flag=!0;continue}flag=!0}if(b.recycle(),!c)log("not found reline");else{log(c),click(c.x,c.y),log("open reline"),sleep(2e3);var d=images.read("./error.jpg");if(flag){flag=!1;var e=images.findImageInRegion(captureScreen(),d,1105+xoff,517,56,56);flag=!0}if(d.recycle(),!e)log("not found error");else{for(log(e),click(e.x,e.y),log("click error");;){if(flag){flag=!1;try{var f=images.detectsColor(captureScreen(),"#7ae6f4",2094+xoff,78,thresholdd=15)}catch(g){flag=!0;continue}flag=!0}if(!f)click(1112+xoff,512),sleep(2e3);else break}engines.execSciptFile("./\u53CB\u60C5\u6C60.js"),exit()}}sleep(9999)}});;){var scoutImg=images.read("./scout.jpg");if(flag){flag=!1;var scout=images.findImageInRegion(captureScreen(),scoutImg,1399+xoff,767,47,41);flag=!0}if(scoutImg.recycle(),!scout)log("not found scout"),back();else{log(scout),click(scout.x,scout.y),log("open scout"),sleep(2e3);break}sleep(2e3)}for(;;){if(flag){flag=!1;var info=images.detectsColor(captureScreen(),"#82e1db",533+xoff,111);flag=!0}if(!info)log("not found info");else{log("found info");break}sleep(1e3)}for(click(2135+xoff,1016);;){if(flag){flag=!1;var friend=images.findMultiColors(captureScreen(),"#00aa99",[[6,7,"#11222a"],[63,-30,"#ffffff"],[207,-106,"#f76600"]],{region:[1719+xoff,203,400,800]});flag=!0}if(!friend)log("not found friend");else{log(friend),click(friend.x,friend.y),log("found friend");break}sleep(1e3)}for(;;){if(flag){flag=!1;var gacha=images.findMultiColors(captureScreen(),"#ffffcc",[[-15,1,"#ffffcc"],[18,1,"#ffffcc"],[-37,-48,"#ffffff"]],{region:[1178+xoff,981,80,50]});flag=!0}if(!gacha)log("not found gacha");else{log(gacha),click(gacha.x,gacha.y),log("found gacha");break}sleep(1e3)}for(;;){if(flag){flag=!1;var decide=images.findMultiColors(captureScreen(),"#ffffff",[[-172,0,"#ff613b"],[213,-6,"#ff613b"],[-807,-506,"#88dddd"]],{threshold:15});flag=!0}if(!decide)log("not found decide");else{log(decide),click(decide.x,decide.y),log("found decide");break}sleep(1e3)}for(sleep(800);!images.detectsColor(captureScreen(),"#88dddd",1997+xoff,181);)sleep(500);for(click(1997+xoff,181),sleep(1e3);!images.detectsColor(captureScreen(),"#88dddd",1997+xoff,181);)sleep(500);sleep(500),click(1997+xoff,181),log("gacha end"),gachaflag=!1,sleep(2e3),log("back home"),click(2062+xoff,66),storage.put("gachatime",gachatime+86400000),exit()}function leftBlack(){var b=images.captureScreen(),c=b.height,d=0,e=c/2;if(1920==b.width)return 0;for(;d<b.width-1;){if(b.pixel(d,e)!=b.pixel(d+1,e))return 0==d?d:d+1;d++}return d+1}
+
+events.on("exit",function(){
+    events.broadcast.emit("done",0);
+  })
+  auto.waitFor(); //415,217
+  images.requestScreenCapture();
+  sleep(300);
+  var storage = storages.create("pref");
+  var xoff = leftBlack() - 246;
+  var gachaflag = true;
+  var gachatime = storage.get("gachatime",null)
+  var FindImageInRegion = sync(function(a,b,c,d,e,f){
+    return images.findImageInRegion(images.captureScreen(),a,b,c,d,e,f)
+})
+var DetectsColor = sync(function(a,b,c,d,e){
+  return images.detectsColor(images.captureScreen(),a,b,c,d,e)
+})
+
+var FindColorInRegion = sync(function(a,b,c,d,e,f){
+    return images.findColorInRegion(images.captureScreen(),a,b,c,d,e,f)
+})
+var FindMultiColors = sync(function(a,b,c){
+    return images.findMultiColors(images.captureScreen(),a,b,c)
+})
+  if(!gachatime){
+    let a = new Date()
+    let year = a.getFullYear()
+    let month = a.getMonth()
+    let day = a.getDate()
+    let hour = 4
+    var gachatime = Date.parse(new Date(year,month,day,hour))
+    storage.put("gachatime",gachatime)
+  }
+  
+  if(Date.parse(new Date()) > gachatime){
+  
+  
+  
+  
+    threads.start(function () {
+      //断线检测
+      sleep(111);
+      while (true) {
+        var relineImg = images.read("./reline.jpg");
+
+          
+          try {
+            var reline = FindImageInRegion(
+              
+              relineImg,
+              1442 + xoff,
+              710,
+              87,
+              41,0.8
+            );
+          } catch (err) {
+            
+            continue;
+          }
+          
+    
+        relineImg = undefined;
+    
+        if (!reline) {
+          log("not found reline");
+        } else {
+          log(reline);
+          click(reline.x, reline.y);
+          reline = null;
+          log("open reline");
+          sleep(2000);
+    
+          var errorImg = images.read("./error.jpg");
+
+            
+            var error = FindImageInRegion(
+              
+              errorImg,
+              1105 + xoff,
+              517,
+              56,
+              56,0.8
+            );
+            
+          errorImg = undefined;
+    
+          if (!error) {
+            log("not found error");
+          } else {
+            log(error);
+            click(error.x, error.y);
+            error = null;
+            log("click error");
+            //重启游戏
+            while (true) {
+
+                
+                try {
+                  var close = DetectsColor(
+                    
+                    "#7ae6f4",
+                    2094 + xoff,
+                    78,
+                    (thresholdd = 15)
+                  );
+                } catch (err) {
+                  
+                  continue;
+                }
+                
+              if (!close) {
+                click(1112 + xoff, 512);
+                sleep(2000);
+              } else {
+                close = null;
+                break;
+              }
+            }
+            engines.execScriptFile("./友情池.js");
+            exit();
+          }
+        }
+        sleep(10343);
+      }
+    });
+    
+  //点击scout
+  
+  while (true) {
+      var scoutImg = images.read("./scout.jpg");
+
+        
+        var scout = FindImageInRegion(
+          
+          scoutImg,
+          1399+xoff,
+          767,
+          47,
+          41,0.8
+        );
+        
+  
+      scoutImg = undefined;
+  
+      if (!scout) {
+        log("not found scout");
+        back()
+      } else {
+        log(scout);
+        click(scout.x, scout.y);
+        log("open scout");
+        sleep(2000);
+          break;
+      }
+      sleep(2000);
+  }
+  //是否在gacha界面找到info
+  while(true){
+
+          
+          var info = DetectsColor("#82e1db",533+xoff,111)
+          
+      if(!info){
+          log("not found info")
+      }else{
+          log("found info")
+          break;
+      }
+      sleep(1000);
+  }
+  //到gacha最底部
+  click(2135+xoff,1016);
+  //找到友情池
+  while(true){
+
+          
+          var friend = FindMultiColors("#00aa99",[[6,7,"#11222a"],[63,-30,"#ffffff"],[207,-106,"#f76600"]],{
+              region:[1719+xoff,203,400,800]
+          })
+          
+      if(!friend){
+          log("not found friend")
+      }else{
+          log(friend)
+          click(friend.x,friend.y)
+          log("found friend")
+          break;
+      }
+      sleep(1000);
+  }
+  //等待gacha 2000，并点击
+  while(true){
+
+      
+      var gacha = FindMultiColors("#ffffcc",[[-15,1,"#ffffcc"],[18,1,"#ffffcc"],[-37,-48,"#ffffff"]],{
+          region:[1178+xoff,981,80,50]
+      })
+      
+  if(!gacha){
+      log("not found gacha")
+  }else{
+      log(gacha)
+      click(gacha.x,gacha.y)
+      log("found gacha")
+      break;
+      
+  }
+    sleep(1000)
+  }
+  //等待确定按钮并点击
+  while(true){
+
+          
+          var decide = FindMultiColors("#ffffff",[[-172,0,"#ff613b"],[213,-6,"#ff613b"],[-807,-506,"#88dddd"]],{
+            threshold : 15
+          })
+          
+      if(!decide){
+          log("not found decide")
+      }else{
+          log(decide)
+          click(decide.x,decide.y)
+          log("found decide")
+          break;
+      }
+        sleep(1000)
+      }
+  //两次skip
+      sleep(800);
+  
+      while(!DetectsColor("#88dddd",1997+xoff,181)){
+          sleep(500);
+     
+      }
+      click(1997+xoff,181);
+      sleep(1000);
+      while(!DetectsColor("#88dddd",1997+xoff,181)){
+          sleep(500);
+     
+      }
+      sleep(500)
+      click(1997+xoff,181);
+  log("gacha end")
+   
+   gachaflag = false;
+  sleep(2000);
+  log("back home")
+  
+  click(2062+xoff,66)
+  //gachatime 加一天时间
+  storage.put("gachatime",gachatime+24*60*60*1000)
+  
+  exit()
+  
+  
+  }
+  
+        //左侧黑边检测
+        function leftBlack() {
+          let a = images.captureScreen();
+          let Y = a.height;
+          let x = 0;
+          let y = Y / 2;
+          if(a.width == 1920 ){
+              return 0;
+          }else{
+              
+              while (x < a.width - 1) {
+                if (a.pixel(x, y) != a.pixel(x + 1, y)) {
+                  if (x == 0) return x;
+                  else return x + 1;
+                }
+                x++;
+              }
+              return x + 1;
+          }
+        }
