@@ -730,7 +730,9 @@ function battle() {
               sleep(2500);
               click(2043 + xoff, 68);
               sleep(2500); //back home
-                while (!sell()); 
+                while (!sell()){
+                  sleep(2000)
+                }; 
 
 
               sellflag = true;
@@ -858,7 +860,7 @@ function sell(){
   sleep(2000);
 
   //进入卖装备界面
-  for(let counter = 0;;){
+  for(let counter = 0;;counter++){
     if(counter > 20){return;}//sell查找次数
     var sellImg = images.read("./sell.jpg");
 
@@ -880,6 +882,7 @@ function sell(){
     } else {
       sleep(1500)
       click(sell.x, sell.y);
+      
         click(sell.x, sell.y);
       sell = null;
       log("open sell");
@@ -889,7 +892,7 @@ function sell(){
   }
   sleep(1500);
 
-  for(let counter = 0;;) {
+  for(let counter = 0;;counter++) {
     if(counter > 20){return;}//oma查找次数
     //找oma
       var oma = FindMultiColors(
@@ -923,8 +926,8 @@ function sell(){
         //   
         // }
         while(true){
-  
-              
+
+            
           var redbt = DetectsColor( "#ff5533", 1255+xoff, 772,threshold = 30)
             
           if(!redbt){
@@ -970,7 +973,7 @@ function sell(){
   }
 
   //sell主体部分（循环
-  oma:  for(let counter = 0;;) {
+  oma:  for(let counter = 0;;counter++) {
     if(counter > 20){return;}//oma查找次数
     //先omakase售卖
 
@@ -996,7 +999,7 @@ function sell(){
       log("open oma");
       sleep(1000);
 
-      for(let counter = 0;;) {
+      for(let counter = 0;;counter++) {
         if(counter > 20){return;}//ensure查找次数
         //判断oma是否弹出界面
 
@@ -1066,7 +1069,7 @@ function sell(){
           click(1404+xoff, 900);
 
           //4星以下是否卖完
-          equiploop:  for(let counter = 0;;) {
+          equiploop:  for(let counter = 0;;counter++) {
             if(counter > 25){return;}//查找次数
             //judge按钮
 
@@ -1091,19 +1094,19 @@ function sell(){
               log("open onensure");
               //白色cancel按钮
               var starimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAABHNCSVQICAgIfAhkiAAAAiBJREFUOI21lLtvE0EQh787n2/x7RpjHEEkFJzg89kFDeFvoKaioE+FlAoJUaFUCAEVj7+BlNTQIdJSIYgUEkwRCcUPydi5PPw4irOT2Le+xEH8yp2Zb2dmZ8fIplXARIWmtGXyyJ3hwfxl3lYaPP9Ro9Xt61yPZOphwYinpwQlKTCAshR4jj3qpknNjPMYnnjSxlP24BKbkhKTi5yc8egVTsLEUzZzqSQAc6kkRWWTSmhDJ4PHq/KkTVmFbQDCdiiBJ+2zg3WvWFICT4rIWUmdEayDCtPAkzb5QRuGyqeSlJRAmIYmSpPxuLxBZuPxphE+YjGmHdbS9aw2W4CbacGtTEprW8xcYCmf5WvrQGs3gnu3Yz7I+RU/M/8C3vIP/ws48W2/t3JVWCw40Uc6j3oBfKi2STQCY+VT3We/H+ApG3nKj4pT9bDLm0qDpxtVjEvKCQCShsGdK4qHhRyLEyYhTl+ae7zcrPNxp00nCI7BQ5WV4HFxhruzF88Mff/7D882aqy3j0cvUncvCOhOOYDdIIw7qQjYlQL3lAUTiXFsCmMxEXBBJqcGF5UdiRkBzwoLV4qpJ0MmTFwpmBWWHuzKaEkQbr61hs+LzRprDV+7W1w5mrUVZwTwe33ebTd5tVXn116HeSfJ8kKO+9cyOCcqGyb1ueGPgpVlUhgrp+J3eP2zzup2k91e/+jsyfoO31sHLN/IHe3qsI3hB9vt9fkLhOecQDQZ96cAAAAASUVORK5CYII=")
-              for(let counter = 0;;) {
+              for(let counter = 0;;counter++) {
                 if(counter > 50){return;}//star查找次数
 
-               
-               var star = FindImageInRegion(starimg,966+xoff,529,30,30,0.83)
-             
-           if(star){
+              
+              var star = FindImageInRegion(starimg,966+xoff,529,30,30,0.83)
+            
+          if(star){
             sleep(200)
-             break;
-           }else{sleep(300)}
+            break;
+          }else{sleep(300)}
 
-           }
-           starimg = undefined;
+          }
+          starimg = undefined;
               press(1013+xoff, 648,1);
               press(1443+xoff, 762,1);
 
@@ -1126,9 +1129,9 @@ function sell(){
               log("found offensure");
               offensure = null;
               sleep(1300)
-         adsell: while (true) {
-               if(!box1Img){ var box1Img = images.read("./box1.jpg");}
-               if(!box2Img){ var box2Img = images.read("./box2.jpg");}
+        adsell: while (true) {
+              if(!box1Img){ var box1Img = images.read("./box1.jpg");}
+              if(!box2Img){ var box2Img = images.read("./box2.jpg");}
 
                 
                   var mbox1 = MatchTemplate( box1Img, {
@@ -1167,7 +1170,7 @@ function sell(){
                   sleep(100);
                   //红五角星
                   var starimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAABHNCSVQICAgIfAhkiAAAAiBJREFUOI21lLtvE0EQh787n2/x7RpjHEEkFJzg89kFDeFvoKaioE+FlAoJUaFUCAEVj7+BlNTQIdJSIYgUEkwRCcUPydi5PPw4irOT2Le+xEH8yp2Zb2dmZ8fIplXARIWmtGXyyJ3hwfxl3lYaPP9Ro9Xt61yPZOphwYinpwQlKTCAshR4jj3qpknNjPMYnnjSxlP24BKbkhKTi5yc8egVTsLEUzZzqSQAc6kkRWWTSmhDJ4PHq/KkTVmFbQDCdiiBJ+2zg3WvWFICT4rIWUmdEayDCtPAkzb5QRuGyqeSlJRAmIYmSpPxuLxBZuPxphE+YjGmHdbS9aw2W4CbacGtTEprW8xcYCmf5WvrQGs3gnu3Yz7I+RU/M/8C3vIP/ws48W2/t3JVWCw40Uc6j3oBfKi2STQCY+VT3We/H+ApG3nKj4pT9bDLm0qDpxtVjEvKCQCShsGdK4qHhRyLEyYhTl+ae7zcrPNxp00nCI7BQ5WV4HFxhruzF88Mff/7D882aqy3j0cvUncvCOhOOYDdIIw7qQjYlQL3lAUTiXFsCmMxEXBBJqcGF5UdiRkBzwoLV4qpJ0MmTFwpmBWWHuzKaEkQbr61hs+LzRprDV+7W1w5mrUVZwTwe33ebTd5tVXn116HeSfJ8kKO+9cyOCcqGyb1ueGPgpVlUhgrp+J3eP2zzup2k91e/+jsyfoO31sHLN/IHe3qsI3hB9vt9fkLhOecQDQZ96cAAAAASUVORK5CYII=")
-                  for(let counter = 0;;) {
+                  for(let counter = 0;;counter++) {
                     if(counter > 50){return;}//star查找次数
 
                   
@@ -1189,7 +1192,7 @@ function sell(){
                   mbox2 = [];
                   //判断sell完成
 
-                  for(let counter = 0;;) {
+                  for(let counter = 0;;counter++) {
                     if(counter > 50){return;}//star查找次数
 
                       var gbt = DetectsColor( "#888888", 1772+xoff, 1011)
