@@ -108,7 +108,9 @@
       });
       
 
-    while(!sell());
+    while(!sell()){
+      sleep(2000)
+    };
     exit();
 
 
@@ -169,7 +171,7 @@
         sleep(2000);
       
         //进入卖装备界面
-        for(let counter = 0;;){
+        for(let counter = 0;;counter++){
           if(counter > 20){return;}//sell查找次数
           var sellImg = images.read("./sell.jpg");
       
@@ -201,7 +203,7 @@
         }
         sleep(1500);
       
-        for(let counter = 0;;) {
+        for(let counter = 0;;counter++) {
           if(counter > 20){return;}//oma查找次数
           //找oma
             var oma = FindMultiColors(
@@ -282,7 +284,7 @@
         }
       
         //sell主体部分（循环
-        oma:  for(let counter = 0;;) {
+        oma:  for(let counter = 0;;counter++) {
           if(counter > 20){return;}//oma查找次数
           //先omakase售卖
       
@@ -308,7 +310,7 @@
             log("open oma");
             sleep(1000);
       
-            for(let counter = 0;;) {
+            for(let counter = 0;;counter++) {
               if(counter > 20){return;}//ensure查找次数
               //判断oma是否弹出界面
       
@@ -378,7 +380,7 @@
                 click(1404+xoff, 900);
       
                 //4星以下是否卖完
-                equiploop:  for(let counter = 0;;) {
+                equiploop:  for(let counter = 0;;counter++) {
                   if(counter > 25){return;}//查找次数
                   //judge按钮
       
@@ -403,7 +405,7 @@
                     log("open onensure");
                     //白色cancel按钮
                     var starimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAABHNCSVQICAgIfAhkiAAAAiBJREFUOI21lLtvE0EQh787n2/x7RpjHEEkFJzg89kFDeFvoKaioE+FlAoJUaFUCAEVj7+BlNTQIdJSIYgUEkwRCcUPydi5PPw4irOT2Le+xEH8yp2Zb2dmZ8fIplXARIWmtGXyyJ3hwfxl3lYaPP9Ro9Xt61yPZOphwYinpwQlKTCAshR4jj3qpknNjPMYnnjSxlP24BKbkhKTi5yc8egVTsLEUzZzqSQAc6kkRWWTSmhDJ4PHq/KkTVmFbQDCdiiBJ+2zg3WvWFICT4rIWUmdEayDCtPAkzb5QRuGyqeSlJRAmIYmSpPxuLxBZuPxphE+YjGmHdbS9aw2W4CbacGtTEprW8xcYCmf5WvrQGs3gnu3Yz7I+RU/M/8C3vIP/ws48W2/t3JVWCw40Uc6j3oBfKi2STQCY+VT3We/H+ApG3nKj4pT9bDLm0qDpxtVjEvKCQCShsGdK4qHhRyLEyYhTl+ae7zcrPNxp00nCI7BQ5WV4HFxhruzF88Mff/7D882aqy3j0cvUncvCOhOOYDdIIw7qQjYlQL3lAUTiXFsCmMxEXBBJqcGF5UdiRkBzwoLV4qpJ0MmTFwpmBWWHuzKaEkQbr61hs+LzRprDV+7W1w5mrUVZwTwe33ebTd5tVXn116HeSfJ8kKO+9cyOCcqGyb1ueGPgpVlUhgrp+J3eP2zzup2k91e/+jsyfoO31sHLN/IHe3qsI3hB9vt9fkLhOecQDQZ96cAAAAASUVORK5CYII=")
-                    for(let counter = 0;;) {
+                    for(let counter = 0;;counter++) {
                       if(counter > 50){return;}//star查找次数
       
                     
@@ -479,7 +481,7 @@
                         sleep(100);
                         //红五角星
                         var starimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAABYAAAAXCAYAAAAP6L+eAAAABHNCSVQICAgIfAhkiAAAAiBJREFUOI21lLtvE0EQh787n2/x7RpjHEEkFJzg89kFDeFvoKaioE+FlAoJUaFUCAEVj7+BlNTQIdJSIYgUEkwRCcUPydi5PPw4irOT2Le+xEH8yp2Zb2dmZ8fIplXARIWmtGXyyJ3hwfxl3lYaPP9Ro9Xt61yPZOphwYinpwQlKTCAshR4jj3qpknNjPMYnnjSxlP24BKbkhKTi5yc8egVTsLEUzZzqSQAc6kkRWWTSmhDJ4PHq/KkTVmFbQDCdiiBJ+2zg3WvWFICT4rIWUmdEayDCtPAkzb5QRuGyqeSlJRAmIYmSpPxuLxBZuPxphE+YjGmHdbS9aw2W4CbacGtTEprW8xcYCmf5WvrQGs3gnu3Yz7I+RU/M/8C3vIP/ws48W2/t3JVWCw40Uc6j3oBfKi2STQCY+VT3We/H+ApG3nKj4pT9bDLm0qDpxtVjEvKCQCShsGdK4qHhRyLEyYhTl+ae7zcrPNxp00nCI7BQ5WV4HFxhruzF88Mff/7D882aqy3j0cvUncvCOhOOYDdIIw7qQjYlQL3lAUTiXFsCmMxEXBBJqcGF5UdiRkBzwoLV4qpJ0MmTFwpmBWWHuzKaEkQbr61hs+LzRprDV+7W1w5mrUVZwTwe33ebTd5tVXn116HeSfJ8kKO+9cyOCcqGyb1ueGPgpVlUhgrp+J3eP2zzup2k91e/+jsyfoO31sHLN/IHe3qsI3hB9vt9fkLhOecQDQZ96cAAAAASUVORK5CYII=")
-                        for(let counter = 0;;) {
+                        for(let counter = 0;;counter++) {
                           if(counter > 50){return;}//star查找次数
       
                         
@@ -501,7 +503,7 @@
                         mbox2 = [];
                         //判断sell完成
       
-                        for(let counter = 0;;) {
+                        for(let counter = 0;;counter++) {
                           if(counter > 50){return;}//star查找次数
       
                             var gbt = DetectsColor( "#888888", 1772+xoff, 1011)
