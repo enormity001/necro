@@ -681,6 +681,8 @@ function battle() {
 
         if (!esc) {
           log("not found esc");
+          press(1879+xoff,172,1)//工会战0贡献退出//工会战0贡献退出
+              sleep(100);
           click(1873 + xoff, 997);
         } else {
           log(esc);
