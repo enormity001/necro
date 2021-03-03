@@ -669,8 +669,10 @@ function battle() {
       }
 
 
-      while (true) {
-
+      for(let counter = 0;;counter++){
+        if(counter > 60){
+          break;
+        }
           
           var esc = FindMultiColors( "#ffffff", [
             [-68, 96, "#598ad9"],
