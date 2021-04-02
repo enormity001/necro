@@ -1099,7 +1099,7 @@ function battle() {
                     if (!stuckorlose) {
                        
                         press(1879+xoff,172,1)//工会战0贡献退出
-                        
+                        sleep(100)
                         // press(2133+xoff,336,1)//退出奖励页面
                         press(2136+xoff,350,1)
                     }
