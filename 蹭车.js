@@ -1083,14 +1083,10 @@ function battle() {
                 var i = 0;
 
                     
-                    var refresh = FindColorInRegion(
-                        
-                        "#55bbcc",
-                        2036 + xoff,
-                        248,
-                        2,
-                        2,1 
-                    );
+                var refresh = FindMultiColors("#55bbcc",[[1,1,"#55bbcc"],[-2,1,"#55bbcc"]],{
+                  region:[2036+xoff,248,5,5],
+                  threshold:1
+                })
                     
                 if (!refresh) {
                     log("not found refresh");
