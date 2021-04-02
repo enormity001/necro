@@ -1078,15 +1078,13 @@ function battle() {
                 });
             }
             //等待时间
+            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAR1JREFUKJGFkTEzA1EUhb+3+/CyGWY3uzvZTQwTIWNDMgoNBR0qVBodSv6DP6H1D5RGp9KoVYrMMDFhRgozCQrFU4SMWHZPdefcc869c6+wgkCTgmBxGbtcAcAANCCruwcAtK6veGncgo7n5GbnmVhdw1Sqz8nSxjYAY5Nluq0maM395QWd5l1fpBwXIc2BMPlduFENN6oBkA2LvLefaZyf8fr4gLIdhCn/Nv6EN7cAQMbzuTk9wVQKIcSAxvj/JL2A+v4hlpeP9cy39tPxR7eD5ecxR1RMYPkBxtBwjBdWEGrluD1jJsP05g65SjVpkS9jGGro/QYhGC2MU987wpmJEo2ytL5FYWllgMwGxdSJUrke9lQlVfgbiVdNwifuRDRE44Ly0gAAAABJRU5ErkJggg== ")
 
             while (true) {
                 var i = 0;
 
                     
-                var refresh = FindMultiColors("#55bbcc",[[1,1,"#55bbcc"],[-2,1,"#55bbcc"]],{
-                  region:[2036+xoff,248,5,5],
-                  threshold:1
-                })
+                var refresh = FindImageInRegion(refreshimg,2027+xoff,240,15,15)
                     
                 if (!refresh) {
                     log("not found refresh");
@@ -1110,6 +1108,7 @@ function battle() {
                       press(deadline.x,deadline.y,1)
                       log("outoftime")
                       deadline = null;
+                      refreshimg = null
                       break re;
                     }
                     //工会战flag
@@ -1126,6 +1125,7 @@ function battle() {
                     ]);
                     
                 if (full) {
+
                     if(stuckorloseflag){ 
                         if(stuckthread){stuckthread.interrupt();}
                         if(losethread){losethread.interrupt();}}
@@ -1140,6 +1140,8 @@ function battle() {
 
 
                     sellflag = true;
+
+                    refreshimg - null
                     return;
                 } else {
                     log("not full");
@@ -1147,6 +1149,7 @@ function battle() {
                   }
                 }
                 } else {
+                  refreshimg = null
                   log("found refresh")
                   log(refresh)
                     refresh = null;
