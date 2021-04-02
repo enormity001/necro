@@ -61,7 +61,7 @@ if (!guildflag) {
     (parseInt(storage.get("hour2", 0)) * 60 +
         parseInt(storage.get("minute2", 0))) *
     60 *
-    1000;
+    1000; 
     var time = new Date();
     if (timeflag) {
         threads.start(function () {
@@ -1088,8 +1088,8 @@ function battle() {
                         "#55bbcc",
                         2036 + xoff,
                         248,
-                        5,
-                        5,2 
+                        2,
+                        2,1 
                     );
                     
                 if (!refresh) {
@@ -1100,7 +1100,8 @@ function battle() {
                        
                         press(1879+xoff,172,1)//工会战0贡献退出
                         sleep(700)
-                        click(2136+xoff,443)//退出奖励页面
+                        // press(2133+xoff,336,1)//退出奖励页面
+                        click(2136+xoff,350)
                     }
                     //每6次进行满仓检测和超时检测
                     if(i%6==0){
