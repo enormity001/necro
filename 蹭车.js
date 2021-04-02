@@ -1147,6 +1147,8 @@ function battle() {
                   }
                 }
                 } else {
+                  log("found refresh")
+                  log(refresh)
                     refresh = null;
                     //定时重启助手(在退出战斗时判断便于重启后再运行脚本)
                     if(restartflag){
