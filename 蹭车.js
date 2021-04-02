@@ -293,7 +293,7 @@ threads.start(function () {
         log("not found reline");
       } else {
         log(reline);
-        click(reline.x, reline.y);
+        press(reline.x, reline.y,1);
         reline = null;
         log("open reline");
         sleep(2000);
@@ -1099,7 +1099,7 @@ function battle() {
                     if (!stuckorlose) {
                        
                         press(1879+xoff,172,1)//工会战0贡献退出
-                        sleep(100)
+                        sleep(150)
                         // press(2133+xoff,336,1)//退出奖励页面
                         press(2136+xoff,444,1)
                     }
