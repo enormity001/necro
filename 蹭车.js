@@ -1101,7 +1101,7 @@ function battle() {
                         press(1879+xoff,172,1)//工会战0贡献退出
                         sleep(100)
                         // press(2133+xoff,336,1)//退出奖励页面
-                        press(2136+xoff,350,1)
+                        press(2136+xoff,444,1)
                     }
                     //每6次进行满仓检测和超时检测
                     if(i%6==0){
