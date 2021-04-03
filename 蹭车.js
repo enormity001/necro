@@ -14,7 +14,7 @@ storage.put("ongoingscript","./蹭车.js");
 var xoff = leftBlack() - 246;
 var teamregion = [269 + xoff, 166, 16, 16]; //队伍找色数组
 var teamx = 43;
-var sellflag = false; //执行过卖装备脚本
+var sellflag = false; //执行过卖装备O脚本
 var guildflag = storage.get("guildflag", false); //工会战flag
 var Recoverflag = storage.get("Recoverflag", false); //从一键日常传入的flag，true表示覆盖本来的吃药flag不进行嗑药
 var stuckorloseflag = storage.get("stuckorloseflag", false);
@@ -1078,13 +1078,13 @@ function battle() {
                 });
             }
             //等待时间
-            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAABHNCSVQICAgIfAhkiAAABWlJREFUWIW1l1tsVEUYx38ze3bbvXV32y7b7cW2tNTWttwENIQE8AK+iC+GF0mMUfBBJEhMVBKBFyOYkBAjhOAlURKjiSZeQojG8GJiIHIRaoEGkEtr2/RKL/Sy3T3jwzln2bN7tlQC/2SSnTPffPOf7/vPN7PCF4sphECTEpQipRQ6FhQPGmXLVhKpe9Twrgz/mtlD13VcUiLMfj6EauupWLl21oV6Tv3O8LUORz8ljS1UrV6HVuhNf9MsM2Uyc5l9HVAGJQLlldQ8+7zxO15BafPiWUmEqusY7+5EKcXNE8cZ67yRHiuMlCI1zWavIUSaREop3FIiAd3chb+sguZNW4i2Lp11Ydtum1opaWpNk54c6Ofase8Z7+miIBxBuLJJZEFXCgn4SqI0bHwZT1GIaMuSORPIhhU1b2mUC18cRCsoRJgbtyC8ZWUKQJgNIFASpXnzdkqaF9334k4YuHieUE09bp/fmYRFxFMU5vGt71BshtMJ/X+f48avPzuORVuXEn9iFQVF4TmTs5FwB4Isf+t9ihseczQe6mjnyg/fMDU8yNi/txxtCiMl+KIxNK+P+g0b8/rKhE0TUnM7Thq5foWLX3/O9OgI492dszqcGh5kangQhGByoI+Fr75JZEHT3EhoXh8r3t6dYzB28x8uHN7PaHfXPUtX7XMvUPHkats3f7ziHrMySAiXi1B1nW1QTyaZ6O9lorebTD3nI+MtjhKua7jnotmQANLtYdXu/TmD4z1dtB89AkIghEDkWDwYSAAhBP6ycjuB7k5OfbSLqaEBFCClfEgUTBJO0JNJpm8PGeVcN6408ZCIaEJKnvn4SzuBmQRjXTfTfaWUEQ0hUEKkL6ZsbXR8d5QrP32bs4hVCIWQSAG6Al3p6fkagNsfsE2aGOjj/KcH0gspgwkuIZBSoqdSjuJMJaZJJaYdCSAELilJAikzstZVLvOpTU8lM7YAmMwFGWkRs7QsSPO+0PW7rxXLds5JVipDG+ZpmTNMeyuiOQTn7sm4YXWlzPwKhAKRp2hkBiUzCirHCiQIVCqZRVyi+QI2V8oUZaZI70bDOR9W6qSUxgbA8EGmqAUSpeg5fdJGwl9WzsqdHzruUCmVTouUcva0CGGcKKXSInSCVEqlT8JcYUXDSks+AtaY9UorjBTji8ZyXlZ5NSHdHnyl8xycG6G0VC6FQALC0gp2LVhvV4Bl23by1P7PiLYuIVBeRaC8ykiXtbPM4gTG23D5jl34Y3F7FCx9YJARZu3I4pk+xrquowPeWByXpwCAFTt2sWbvIdbsPYTb5zdI6DMJ/vjgvZxNByurWfTaNsgTcqXrKKWQZiGympQyHQWUIhCvZOnWdwlW1djmpxIJlMpIh9JTDF+9nLOQ2xegtKmVYGV1LomMaGguF24h0MzmwohwsLKaxa/vIFQ9P2d+75mTqNQMLk9R0R4hBCqZpPfMSSL1jXgztFAQClO56mnCNfWMXL9KYuQ2AuNal5iaMCNlFTFLkMGqWlpeeYOw+Y8rE0Md7Vw4coDkxAQuTzC4xxKSPpNg8FIbtes35EwqLC6hqKqGxPgomsdDYvQ2mhl+W6UWgkBVDaH5DSx4cRNhh6fdUEc7Zw/uIzE2CgJEsKLCdoA9wRALt2yntGVJXi0MXmqj68RxIwJZJgJBxdr1RBqdX+tjnTc498k+7vT1pEu4CFVW5lSRgnCExpc2E3ykFt+8eI6j+8VA21lu/XaMoctt6IlE+rtL8/v3WHeC1WYmJ+hvO0didAShaTmvrvtB//nTtH91mOFrHaSSSdt6wldePusj2h+LU7tuA95ojHmLlv3vxfv++pPJgT6u//Ijd/p6HW3+AxHV9E9KJL4lAAAAAElFTkSuQmCC")
+            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAACIAAAAhCAYAAAC803lsAAAABHNCSVQICAgIfAhkiAAABYhJREFUWIW9l2tsVEUUgL+ZvbvtPtrttizt9kFbngVaCghIkAR8BPxVf8kPEzURDDEBjIQfwg/gjxFjSIgGjKJRgzFqNDH4iCEhJpqYqggiVGiA8GhhobBtaUsf290Zf9x7t3u7t1tE5CQ32b1nzplvzjkzc64IVVZqCah0GgVoIUBrHqQIwNBKIaREPCCAiqUriEyfA4DGnK/33BkMrTVKa6SUKKVMlQAmYArXz6RqxaN5J4v/+jM9F9pdF1bW0EjNqjUYhf7Mu7NffIQBmCBCIK2oKASIMSehWDV1a1rM3xVVTGlcmBckXDeDgatX0MDlo9/T33EpoyuMlCE9hmP84I04hj2dUgqPlABordEIAIIVVcx/diPRpsV5J3esem4TZXObMuBDiS4ufPsVA/FOCkpKEYYTZOhGHANrQgVI61FAYVmUhnXP4ysOE21cdNcQ48WOnr9sKn99uB+joNCsxywZ6UngQLOjEoiU0fjiy0yZnz8F/xZowfpN+KPlObp0KoVhBQQNpIGC4jALXtpGaUPjhE5vnj7BpSPfuOqiTYuJPbySguKSXJh5za42SikzInadeENFNG/eTunsea4G3e1tnPv6M4Z7EvRfveI65valC1xr/QnDH2Bmy7oJfTlEa2dqpOF1Nbx98Rxtn35Asu82A9c68voc7kkw3JMAIRi61cWC9ZuJzJo7KUsGxPAHWLZtV86AvssXOPHOXgbinZM6q3/yKaqWr3K8C8aqJrVzgAiPh3DtDIdSpVIM3bzBnXinXUoTnXMA+EujlMyYfVcTZ4vG3K1Ir4+Vu/bmDLgT7+TMJweRQiBytPdPMiBCCIIVlQ7lwLUOfntzFyO93QjroPs/ZcIZVCrFcE8Crc0zdvwhdL/FEFLyxFsfOyFGk/R3XjZ/W/eQkBKRTuetkfYvD3Hu8OeOdza+ROCRAgWk7cvVknRyxCxWbzDkMB681cXJg/vQmPeOyIKRlhM3oHRyhHRyxAGRAfF4SFkQWH6zxT012kxN5q9lJIW4pxQJKc3OIk+/I123g3A+ds8iLKduYxyPw5fZXmhAW9Fws7/r7aCVIp1VuHcbFzuCKhvCRSQIdDrleCmExAiEMrhaCJS1KgApJULbvVNuSARWS2FFQ2G2FrYP04/TRqI18WOtDpBgRSUrdryeQ62Vyk1RvlVavbCeJBoAUmvNyYP7Jh2YgdFmyztZ4doFqrIKtDBSSiBajhjXKkKeGpFeH4EpU91IzC0thLliNwgLUuOsjSVbdvDY3veJNi0iVFlDqLImE1lpr9I+wGwJxapYunUnwfLYGINdKxaMR0ozMna67CcrGnZ9BMtjeHwFACzbupPVew6wes8BvIHgGIgaTfLLa9tzVlZUXUvzhi3gkgJlwYy/EIUFlx2NUKyaxZtepaimzuEjnUxmvjgyqdEqTc/5szkTegMhpsxtoqi61vHejoqUEp/XS6HHQ4HHg08IpKWzF7Nw41bCtdNzfF//oxWdHgXA4y0q3g0ClUpx/VgrpbMa8GfVRkG4hOqVj1NSN5Pei+cZud07dmxbtTB+A2vMdBTX1NH0wmYiLj1Kd3sbJ9/bx+jgICDwFBQX7RbCjL4eTZI4c4r6tS05hoWlZRTX1DE60IfH6yPd34dXSqQNYENJSfG0eiL1s5j19HOubWJ3exvH979Bsr8Pe24RrKx0XAC+ojDNG18xv2Um2J7dZ05x9ccfJlALqh5dS6ShydW2r+MSx9/ew52uuOOTVESmTcu5iXzhCHOe2UDRtDoCU2Pj1fcsidMn6Dj6Hd1nT6OSSSd+KBbLAdFCYASCVDy0nIqljzC1ecl/hrh58hh/H3qXwa7rrvqc1IyXQHmM+jUt+KPl9wR088/fGbzVxcUjhxm8EZ9w3D9KGAJ43tdEbwAAAABJRU5ErkJggg==")
 
             while (true) {
                 var i = 0;
 
                     
-                var refresh = FindImageInRegion(refreshimg,2012+xoff,239,34,34)
+                var refresh = FindImageInRegion(refreshimg,1932+xoff,237,46,46)
                     
                 if (!refresh) {
                     log("not found refresh");
