@@ -715,16 +715,14 @@ function battle() {
             if(losethread){losethread.interrupt();}}
           if (guildflag) {
 
-              
-              var full = FindMultiColors( "#ffffff", [
-                [-174, 24, "#ff6840"],
-                [208, 17, "#ff6840"],
-                [-449, -160, "#ff5533"],
-                [454, -154, "#ff5533"],
-                [-681, -534, "#88dddd"],
-                [706, -536, "#88dddd"],
-              ]);
-
+            var full = FindMultiColors( "#ffffff", [
+              [-174, 24, "#ff6840"],
+              [208, 17, "#ff6840"],
+              [-449, -160, "#ff5533"],
+              [454, -154, "#ff5533"],
+              [-681, -534, "#88dddd"],
+              [706, -536, "#88dddd"],
+          ],{threshold:20});
               
             if (full) {
                 if(stuckorloseflag){ 
