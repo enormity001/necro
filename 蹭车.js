@@ -1078,13 +1078,13 @@ function battle() {
                 });
             }
             //等待时间
-            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAR1JREFUKJGFkTEzA1EUhb+3+/CyGWY3uzvZTQwTIWNDMgoNBR0qVBodSv6DP6H1D5RGp9KoVYrMMDFhRgozCQrFU4SMWHZPdefcc869c6+wgkCTgmBxGbtcAcAANCCruwcAtK6veGncgo7n5GbnmVhdw1Sqz8nSxjYAY5Nluq0maM395QWd5l1fpBwXIc2BMPlduFENN6oBkA2LvLefaZyf8fr4gLIdhCn/Nv6EN7cAQMbzuTk9wVQKIcSAxvj/JL2A+v4hlpeP9cy39tPxR7eD5ecxR1RMYPkBxtBwjBdWEGrluD1jJsP05g65SjVpkS9jGGro/QYhGC2MU987wpmJEo2ytL5FYWllgMwGxdSJUrke9lQlVfgbiVdNwifuRDRE44Ly0gAAAABJRU5ErkJggg== ")
+            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAACEAAAAgCAYAAACcuBHKAAAABHNCSVQICAgIfAhkiAAABWlJREFUWIW1l1tsVEUYx38ze3bbvXV32y7b7cW2tNTWttwENIQE8AK+iC+GF0mMUfBBJEhMVBKBFyOYkBAjhOAlURKjiSZeQojG8GJiIHIRaoEGkEtr2/RKL/Sy3T3jwzln2bN7tlQC/2SSnTPffPOf7/vPN7PCF4sphECTEpQipRQ6FhQPGmXLVhKpe9Twrgz/mtlD13VcUiLMfj6EauupWLl21oV6Tv3O8LUORz8ljS1UrV6HVuhNf9MsM2Uyc5l9HVAGJQLlldQ8+7zxO15BafPiWUmEqusY7+5EKcXNE8cZ67yRHiuMlCI1zWavIUSaREop3FIiAd3chb+sguZNW4i2Lp11Ydtum1opaWpNk54c6Ofase8Z7+miIBxBuLJJZEFXCgn4SqI0bHwZT1GIaMuSORPIhhU1b2mUC18cRCsoRJgbtyC8ZWUKQJgNIFASpXnzdkqaF9334k4YuHieUE09bp/fmYRFxFMU5vGt71BshtMJ/X+f48avPzuORVuXEn9iFQVF4TmTs5FwB4Isf+t9ihseczQe6mjnyg/fMDU8yNi/txxtCiMl+KIxNK+P+g0b8/rKhE0TUnM7Thq5foWLX3/O9OgI492dszqcGh5kangQhGByoI+Fr75JZEHT3EhoXh8r3t6dYzB28x8uHN7PaHfXPUtX7XMvUPHkats3f7ziHrMySAiXi1B1nW1QTyaZ6O9lorebTD3nI+MtjhKua7jnotmQANLtYdXu/TmD4z1dtB89AkIghEDkWDwYSAAhBP6ycjuB7k5OfbSLqaEBFCClfEgUTBJO0JNJpm8PGeVcN6408ZCIaEJKnvn4SzuBmQRjXTfTfaWUEQ0hUEKkL6ZsbXR8d5QrP32bs4hVCIWQSAG6Al3p6fkagNsfsE2aGOjj/KcH0gspgwkuIZBSoqdSjuJMJaZJJaYdCSAELilJAikzstZVLvOpTU8lM7YAmMwFGWkRs7QsSPO+0PW7rxXLds5JVipDG+ZpmTNMeyuiOQTn7sm4YXWlzPwKhAKRp2hkBiUzCirHCiQIVCqZRVyi+QI2V8oUZaZI70bDOR9W6qSUxgbA8EGmqAUSpeg5fdJGwl9WzsqdHzruUCmVTouUcva0CGGcKKXSInSCVEqlT8JcYUXDSks+AtaY9UorjBTji8ZyXlZ5NSHdHnyl8xycG6G0VC6FQALC0gp2LVhvV4Bl23by1P7PiLYuIVBeRaC8ykiXtbPM4gTG23D5jl34Y3F7FCx9YJARZu3I4pk+xrquowPeWByXpwCAFTt2sWbvIdbsPYTb5zdI6DMJ/vjgvZxNByurWfTaNsgTcqXrKKWQZiGympQyHQWUIhCvZOnWdwlW1djmpxIJlMpIh9JTDF+9nLOQ2xegtKmVYGV1LomMaGguF24h0MzmwohwsLKaxa/vIFQ9P2d+75mTqNQMLk9R0R4hBCqZpPfMSSL1jXgztFAQClO56mnCNfWMXL9KYuQ2AuNal5iaMCNlFTFLkMGqWlpeeYOw+Y8rE0Md7Vw4coDkxAQuTzC4xxKSPpNg8FIbtes35EwqLC6hqKqGxPgomsdDYvQ2mhl+W6UWgkBVDaH5DSx4cRNhh6fdUEc7Zw/uIzE2CgJEsKLCdoA9wRALt2yntGVJXi0MXmqj68RxIwJZJgJBxdr1RBqdX+tjnTc498k+7vT1pEu4CFVW5lSRgnCExpc2E3ykFt+8eI6j+8VA21lu/XaMoctt6IlE+rtL8/v3WHeC1WYmJ+hvO0didAShaTmvrvtB//nTtH91mOFrHaSSSdt6wldePusj2h+LU7tuA95ojHmLlv3vxfv++pPJgT6u//Ijd/p6HW3+AxHV9E9KJL4lAAAAAElFTkSuQmCC")
 
             while (true) {
                 var i = 0;
 
                     
-                var refresh = FindImageInRegion(refreshimg,2027+xoff,240,15,15)
+                var refresh = FindImageInRegion(refreshimg,2012+xoff,239,34,34)
                     
                 if (!refresh) {
                     log("not found refresh");
