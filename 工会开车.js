@@ -762,8 +762,14 @@ re: while(true){
          //每3次进行满仓和超时检测
         if(i%3==0){
            //满仓检测
-           var full = FindMultiColors("#ffffff",[[-174,24,"#ff6840"],[208,17,"#ff6840"],[-449,-160,"#ff5533"],[454,-154,"#ff5533"],[-681,-534,"#88dddd"],[706,-536,"#88dddd"]])
-
+           var full = FindMultiColors( "#ffffff", [
+            [-174, 24, "#ff6840"],
+            [208, 17, "#ff6840"],
+            [-449, -160, "#ff5533"],
+            [454, -154, "#ff5533"],
+            [-681, -534, "#88dddd"],
+            [706, -536, "#88dddd"],
+        ],{threshold:20});
 
          if (full) {
           if(stuckorloseflag){ 
@@ -1364,9 +1370,14 @@ while (true) {
                         while (true) {
                           
                                 
-                                var full = FindMultiColors("#ffffff",[[-174,24,"#ff6840"],[208,17,"#ff6840"],[-449,-160,"#ff5533"],[454,-154,"#ff5533"],[-681,-534,"#88dddd"],[706,-536,"#88dddd"]])
-                          
-                              
+                          var full = FindMultiColors( "#ffffff", [
+                            [-174, 24, "#ff6840"],
+                            [208, 17, "#ff6840"],
+                            [-449, -160, "#ff5533"],
+                            [454, -154, "#ff5533"],
+                            [-681, -534, "#88dddd"],
+                            [706, -536, "#88dddd"],
+                        ],{threshold:20});
                               if (full) {
                                   if(stuckorloseflag){ 
                                       if(stuckthread){stuckthread.interrupt();}
@@ -1911,3 +1922,280 @@ function sell(){
   }
   return emptyflag;
 }
+
+// function normalbattleprc(partflag,parttype,speedflag,speedtype,autoflag,autotype,teamflag,teamtype,recoverflag,rebattleflag){ //从寻找battle界面到战斗结束页面过程函数
+//   var time2 = new Date();
+//   re: while (true) {
+                      
+
+          
+//           var simple = FindColorInRegion("#ffffcc",1805+xoff,238,10,6)
+          
+    
+        
+//         if (!simple) {
+//             log("not found simple");
+//             click(409+xoff, 227);
+//         } else {
+//             log("found simple");
+//             simple = null;
+//             //选择队伍
+//             if(teamflag){
+//               global.teamflag = false;
+//               teamflag = false;
+            
+//               while(true){
+
+                  
+//                   var teampoint = FindColorInRegion("#ffffff",teamregion[0] + teamx * teamtype,teamregion[1],teamregion[2],teamregion[3]);
+                  
+//                 if(!teampoint){
+//                   press(258+xoff, 582,1);
+//                   sleep(500);
+//                 }else{
+//                   break;
+//                 }
+//                  }
+//            log("队伍设置成功")
+        
+    
+//         }
+    
+    
+//           //选择倍速
+//           if(speedflag){//判断是否调过速
+//           global.speedflag = false;
+//               speedflag = false;
+        
+
+            
+//           switch(speedtype){
+//             case 0:
+//                 while (!DetectsColor("#ffffff", 1489+xoff,1009, threshold = 20)) {
+//                     click(1371+xoff,964);
+//                     sleep(400);
+//                   }
+//               log("调速为1x")
+//               break;
+//             case 1:
+//                 while (!DetectsColor("#e85533", 1570+xoff,1017, threshold = 20)) {
+//                     click(1371+xoff,964);
+//                     sleep(400);
+//                   }
+//               log("调速为2x")
+//               break;
+//             case 2:
+//                 while (!DetectsColor("#f85533", 1558+xoff,1014, threshold = 20)) {
+//                     click(1371+xoff,964);
+//                     sleep(400);
+//                   }
+//               log("调速为3x")
+//               break;
+//             default:
+//                 while (!DetectsColor("#f85533", 1558+xoff,1014, threshold = 20)) {
+//                     click(1371+xoff,964);
+//                     sleep(400);
+//                   }
+//               log("调速为3x")
+//               break;
+//         }
+        
+//           log("调速成功") 
+//         }
+    
+//           click(1873+xoff,997);
+//           log("open battle");
+          
+    
+//           var loopflag =threads.disposable();
+//           var recoverthread = threads.start(function(){//吃药子线程
+//           let time = new Date()
+//           while(new Date()-time < 5000){
+
+              
+//               var empty = DetectsColor( "#ff5533", 1609+xoff, 137);
+              
+      
+//             if (!empty) {
+//               log("ap enough");
+//             } else {
+//               if (recoverflag) {
+//                 log(empty);
+//                 empty = null
+//                 click(1639+xoff, 592); // click(1624+xoff,439) 石头
+                
+//                 log("clicked use");
+      
+//                 while(true){
+
+                    
+//                   var ensure = DetectsColor("#ff5533",1255+xoff,818,threshold = 16)
+                  
+//                   if(!ensure){
+//                     if(new Date()- time > 5000){//寻找决定按钮7s未找到，结束脚本
+//                       log("药吃完结束脚本")
+//                       exit()
+//                     }
+//                   }else{ensure = null; break;}
+//                   sleep(199);
+//                 }
+
+//                 click(1759+xoff, 530);
+//                 sleep(700);
+//                 log("clicked max");
+    
+//                 click(1442+xoff, 838);
+//                 log("clicked recover");
+      
+//               // sleep(1000);
+      
+//                 //重新进入循环
+//                 loopflag.setAndNotify("re")//吃药成功发送battle事件
+//                 if(recoverthread) recoverthread.interrupt()
+//               } else {
+//                 back();
+//                 sleep(500);
+//                 back();
+//                 exit();
+//               }
+//             }
+//             sleep(500)
+//           }
+//           loopflag.setAndNotify("null")//无事发生
+//         })
+      
+  
+        
+//           if(loopflag.blockedGet()=="re"){
+//             while(true){
+
+                
+//                 var simple = FindColorInRegion(
+                  
+//                   "#ffffcc",
+//                   1805+xoff,
+//                   238,
+//                   10,
+//                   6
+//                 );
+                
+//               if(simple){
+//                 simple = null
+//                 click(1873+xoff, 997);
+//                 log("吃药成功，再次开始")
+//                 sleep(400)
+//                 break;
+//               }
+//               sleep(500);
+//             }
+//           }
+      
+//           //根据设备调等待时间
+    
+
+//           while (true) {
+            
+
+              
+//               var esc = FindMultiColors("#ffffff",[[-68,96,"#598ad9"],[-42,135,"#60c160"]],{threshold:25})
+
+              
+          
+          
+//             if (!esc) {
+//               log("not found esc");
+//               click(345+xoff, 353);
+//             } else {
+//               log(esc);
+//               esc = null
+//               //调节任务行动状态
+//               log("found esc");
+
+    
+//               sleep(3000);
+//               while (true) {
+
+                  
+//                   var next = FindMultiColors( "#ffffff", [
+//                     [21, 5, "#ffffff"],
+//                     [-149, -993, "#ffff22"],
+//                     [-2, -962, "#ffff22"],
+//                   ]);
+                  
+//                 if (!next) {
+//                   log("not found next");
+//                   if(!stuckorlose){
+//                     press(1790 + xoff, 186,1);
+//                   press(1818 + xoff, 186,1)
+
+//                   }
+//                 } else {
+//                   log("found next");
+                  
+//                   //判断助战
+
+//                   if(partflag){
+//                     sleep(100)
+                  
+//                   if(parttype){
+//                     while(true){
+
+                      
+//                       var onpart = DetectsColor("#88dddd",647+xoff,1037)
+                      
+//                       if(onpart){
+//                         onpart = null;
+//                         press(699+xoff,978,1);
+//                         sleep(100)
+//                       }else{
+//                         break;
+//                       }
+//                     }
+//                     log("助战开启")
+//                   }else{
+//                     while(true){
+
+                        
+//                         var onpart = DetectsColor("#666666",647+xoff,1037)
+                        
+//                         if(onpart){
+//                           onpart = null;
+//                           press(699+xoff,978,1);
+//                           sleep(100)
+//                         }else{
+//                           break;
+//                         }
+//                       }
+//                     log("助战关闭")
+//                   }
+//                   global.partflag = false;
+//                   partflag = false;
+                  
+//                 }
+
+//                   if((new Date()-time2) > timelimit2){
+//                     click(next.x,next.y);
+//                     break re;
+//                   }
+//                   //是否再战
+//                   if(rebattleflag){
+//                       log("rebattle")
+//                       click(996+xoff,1009)
+//                   }else{
+//                       log("next")
+//                       click(next.x,next.y)
+//                       next = null;
+//                       break re;
+//                   }    
+//                   next = null;                 
+//                 continue re;
+//                 }
+//                 sleep(1000);//非限时本，间隔可以调大
+//               }
+//             }
+//             sleep(1000);
+//           }
+//         }
+//         sleep(1000);
+//     }
+// }
