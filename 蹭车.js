@@ -14,7 +14,7 @@ storage.put("ongoingscript","./蹭车.js");
 var xoff = leftBlack() - 246;
 var teamregion = [269 + xoff, 166, 16, 16]; //队伍找色数组
 var teamx = 43;
-var sellflag = false; //执行过卖装备O脚本
+var sellflag = false; //执行过卖装备脚本
 var guildflag = storage.get("guildflag", false); //工会战flag
 var Recoverflag = storage.get("Recoverflag", false); //从一键日常传入的flag，true表示覆盖本来的吃药flag不进行嗑药
 var stuckorloseflag = storage.get("stuckorloseflag", false);
@@ -556,7 +556,7 @@ function raidprc(
                                       
                                       if(pullbar){
                                         swipe(pullbar.x,pullbar.y+10,pullbar.x,pullbar.y+420,200);
-                                        sleep(205);
+                                        sleep(215);
                                         pullbar = null;
                                       }else{Refresh();}
                                       break;
@@ -587,7 +587,7 @@ function raidprc(
                               
                               if(pullbar){
                                 swipe(pullbar.x,pullbar.y+10,pullbar.x,pullbar.y+420,200);
-                                sleep(205);
+                                sleep(215);
                                 pullbar = null;
                               }else{Refresh();}
                               break;
@@ -660,7 +660,7 @@ function raidprc(
                                   
                                   if(pullbar){
                                     swipe(pullbar.x,pullbar.y+10,pullbar.x,pullbar.y+420,200);
-                                    sleep(205);
+                                    sleep(215);
                                     pullbar = null;
                                   }else{Refresh();}
                                   break;
@@ -691,7 +691,7 @@ function raidprc(
                               
                               if(pullbar){
                                 swipe(pullbar.x,pullbar.y+10,pullbar.x,pullbar.y+420,200);
-                                sleep(205);
+                                sleep(215);
                                 pullbar = null;
                               }else{Refresh();}
                               break;
@@ -1078,19 +1078,13 @@ function battle() {
                 });
             }
             //等待时间
-           
-while(true){
-var  i =0
+            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAR1JREFUKJGFkTEzA1EUhb+3+/CyGWY3uzvZTQwTIWNDMgoNBR0qVBodSv6DP6H1D5RGp9KoVYrMMDFhRgozCQrFU4SMWHZPdefcc869c6+wgkCTgmBxGbtcAcAANCCruwcAtK6veGncgo7n5GbnmVhdw1Sqz8nSxjYAY5Nluq0maM395QWd5l1fpBwXIc2BMPlduFENN6oBkA2LvLefaZyf8fr4gLIdhCn/Nv6EN7cAQMbzuTk9wVQKIcSAxvj/JL2A+v4hlpeP9cy39tPxR7eD5ecxR1RMYPkBxtBwjBdWEGrluD1jJsP05g65SjVpkS9jGGro/QYhGC2MU987wpmJEo2ytL5FYWllgMwGxdSJUrke9lQlVfgbiVdNwifuRDRE44Ly0gAAAABJRU5ErkJggg== ")
 
-var refresh =FindMultiColors("#ffffff",[[234,3,"#ffffff"],[631,6,"#ffffff"],[1147,900,"#ffffff"],[985,-84,"#222222"],[738,-86,"#ffffff"]],
-  {region:[882+xoff,103,36,36]}
-  )
-
-            
-                
+            while (true) {
+                var i = 0;
 
                     
-                
+                var refresh = FindImageInRegion(refreshimg,2027+xoff,240,15,15)
                     
                 if (!refresh) {
                     log("not found refresh");
