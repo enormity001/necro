@@ -882,6 +882,7 @@ function battleprc(
                   );
                   
                 if(!evenoff){
+                  back()
                   //找到活动页面X
                   sleep(1000);
                 }else{
@@ -1055,15 +1056,14 @@ function battleprc(
           while (true) {
             //卖装备
 
-              
-              var full = FindMultiColors( "#ffffff", [
-                [-174, 24, "#ff6840"],
-                [208, 17, "#ff6840"],
-                [-449, -160, "#ff5533"],
-                [454, -154, "#ff5533"],
-                [-681, -534, "#88dddd"],
-                [706, -536, "#88dddd"],
-              ]);
+            var full = FindMultiColors( "#ffffff", [
+              [-174, 24, "#ff6840"],
+              [208, 17, "#ff6840"],
+              [-449, -160, "#ff5533"],
+              [454, -154, "#ff5533"],
+              [-681, -534, "#88dddd"],
+              [706, -536, "#88dddd"],
+          ],{threshold:20});
 
               
             if (full) {
