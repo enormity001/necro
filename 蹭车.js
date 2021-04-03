@@ -1082,7 +1082,7 @@ function battle() {
 while(true){
 var  i =0
 
-var refresh =FindMultiColors("#ffffff",[[631,4,"#ffffff"],[751,-84,"#103af5"],[996,-84,"#222222"]],
+var refresh =FindMultiColors("#ffffff",[[234,3,"#ffffff"],[631,6,"#ffffff"],[1147,900,"#ffffff"],[985,-84,"#222222"],[738,-86,"#ffffff"]],
   {region:[882+xoff,103,36,36]}
   )
 
