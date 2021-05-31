@@ -470,13 +470,13 @@ function normalbattleprc(partflag,speedflag,speedtype,autoflag,autotype,teamflag
               sleep(4000);
               //判断关卡结束
                //boss 的HP字体颜色
-               while(!DetectsColor("#ff5533",1154+xoff,54,threshold = 2)){
+               while(!DetectsColor("#ff5533",1137+xoff,56,threshold = 2)){
                 log("not found boss")
                 sleep(700)
               }
               log("found boss")
               
-              while(DetectsColor("#ff5533",1154+xoff,54,threshold = 2)){
+              while(DetectsColor("#ff5533",1137+xoff,56,threshold = 2)){
                 log("boss not died")
                 sleep(700)
               }
