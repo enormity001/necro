@@ -325,8 +325,8 @@ var MatchTemplate = sync(function(a,b){
         
         
             log("not bottom")
-          var pullbar1 = FindColorInRegion("#88dddd",2124+xoff,246,11,775,{threshold:0.9});
-          var pullbar2 = FindColorInRegion("#83d4d4",2124+xoff,246,11,775,{threshold:0.9});
+          var pullbar1 = FindColorInRegion("#88dddd",2124+xoff,246,11,775);
+          var pullbar2 = FindColorInRegion("#83d4d4",2124+xoff,246,11,775);
          pullbar = pullbar1!=null?pullbar1:pullbar2
           log("pullbar"+pullbar)
           if(pullbar){
