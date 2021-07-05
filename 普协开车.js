@@ -33,7 +33,7 @@ events.on("exit",function(){
   var stuckorloseflag = storage.get("stuckorloseflag",false);
   var sideacctflag = storage.get("sideacctflag",false);
   var nortype = storage.get("nortype",4);
-  var nortype = 4
+ 
   var usediamond =  storage.get("usediamond3",false);
 
   var FindImageInRegion = sync(function(a,b,c,d,e,f){
