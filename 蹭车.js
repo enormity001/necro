@@ -50,8 +50,8 @@ if (!guildflag) {
     var teamtype = storage.get("teamtype1", 0); //0~5 队伍顺序
     var recoverflag = storage.get("recoverflag2", false); //吃药flag
     var raidmethod = storage.get("nraidmethod", 0); //1 不指定颜色和难度按hp蹭，  2 按难度和血条蹭 3 按难度，颜色和血条蹭
-    var difficulty1 = storage.get("ndifficulty1", 0); //["#aa66dd","#aa66dd","#ff9955"]//hell extra vh
-    var difficulty2 = storage.get("ndifficulty2", 0); //["#aa66dd","#aa66dd","#ff9955"]//hell extra vh  普协hell和ex的难度颜色一样
+    var difficulty1 = storage.get("ndifficulty1", 0); //["#ff0033","#aa66dd","#ff9955"]//hell extra vh
+    var difficulty2 = storage.get("ndifficulty2", 0); //["#ff0033","#aa66dd","#ff9955"]//hell extra vh  
     var health = (1 - storage.get("nhealth", 0) / 100) * 280; //n为剩余血条百分比
     var optional = storage.get("optional1", false); //蹭车备选项
     var bosstype1 = storage.get("nbosstype1", 0); //["#ffff88","#ff6666","#6699ff","#77ee77","ee77ff","#999999"]   // 黄 红 蓝 绿 紫 灰
@@ -75,18 +75,18 @@ if (!guildflag) {
     }
     switch (difficulty1) {
         case 0:
-            difficulty1 = "#aa66dd"; //普协hell和ex的难度颜色一样
+            difficulty1 = "#ff0033"; 
             break;
         case 1:
-            difficulty1 = "#aa66dd"; //普协hell和ex的难度颜色一样
+            difficulty1 = "#aa66dd"; 
             break;
     }
     switch (difficulty2) {
         case 0:
-            difficulty2 = "#aa66dd"; //普协hell和ex的难度颜色一样
+            difficulty2 = "#ff0033"; 
             break;
         case 1:
-            difficulty2 = "#aa66dd"; //普协hell和ex的难度颜色一样
+            difficulty2 = "#aa66dd"; 
             break;
     }
     switch (bosstype1) {
@@ -706,7 +706,7 @@ function raidprc(
 
 function battle() {
     re: for(let counter = 0;;counter++) {
-      if(counter>100){break re;}
+      if(counter>180){break re;}
         //simple查找次数
 
             
@@ -808,7 +808,7 @@ function battle() {
               }
               log("人物状态设置完成")
               }}
-            click(1873 + xoff, 997);
+            press(1873 + xoff, 997,1);
             log("open battle");
 
             //吃药
@@ -1078,13 +1078,12 @@ function battle() {
                 });
             }
             //等待时间
-            var refreshimg = images.fromBase64("iVBORw0KGgoAAAANSUhEUgAAAA4AAAAMCAYAAABSgIzaAAAABHNCSVQICAgIfAhkiAAAAR1JREFUKJGFkTEzA1EUhb+3+/CyGWY3uzvZTQwTIWNDMgoNBR0qVBodSv6DP6H1D5RGp9KoVYrMMDFhRgozCQrFU4SMWHZPdefcc869c6+wgkCTgmBxGbtcAcAANCCruwcAtK6veGncgo7n5GbnmVhdw1Sqz8nSxjYAY5Nluq0maM395QWd5l1fpBwXIc2BMPlduFENN6oBkA2LvLefaZyf8fr4gLIdhCn/Nv6EN7cAQMbzuTk9wVQKIcSAxvj/JL2A+v4hlpeP9cy39tPxR7eD5ecxR1RMYPkBxtBwjBdWEGrluD1jJsP05g65SjVpkS9jGGro/QYhGC2MU987wpmJEo2ytL5FYWllgMwGxdSJUrke9lQlVfgbiVdNwifuRDRE44Ly0gAAAABJRU5ErkJggg== ")
 
             while (true) {
                 var i = 0;
 
                     
-                var refresh = FindImageInRegion(refreshimg,2027+xoff,240,15,15)
+                var refresh = FindMultiColors("#ffffff",[[427,-4,"#ffffff"],[625,1,"#ffffff"],[471,-99,"#bbbbbb"],[742,-79,"#ffffff"],[749,-80,"#103af5"],[743,-69,"#29d78c"],[1147,133,"#55bbcc"],[1146,904,"#ffffff"]],{region:[888+xoff,109,30,21],threshold:10});
                     
                 if (!refresh) {
                     log("not found refresh");
@@ -1092,13 +1091,13 @@ function battle() {
                     //   sleep(100)
                     if (!stuckorlose) {
                        
-                        press(1879+xoff,172,1)//工会战0贡献退出
-                        sleep(150)
+                        // press(1879+xoff,172,1)//工会战0贡献退出
+                        // sleep(150)
                         // press(2133+xoff,336,1)//退出奖励页面
                         press(2136+xoff,444,1)
                     }
                     //每6次进行满仓检测和超时检测
-                    if(i%6==0){
+                    if(i%13==0){
                     //超时
                     var deadline = FindMultiColors("#ffffff",[[327,-96,"#88dddd"],[-103,-211,"#88dddd"],[-101,117,"#88dddd"],[745,18,"#ffffff"],[884,116,"#88dddd"],[884,-209,"#88dddd"]],
                       {
@@ -1172,7 +1171,7 @@ function battle() {
               
                 //计数器
                 i++;
-                sleep(500);
+                sleep(400);
             }
         }
         sleep(300);
