@@ -1083,7 +1083,7 @@ function battle() {
                 var i = 0;
 
                     
-                var refresh = FindMultiColors("#ffffff",[[427,-4,"#ffffff"],[625,1,"#ffffff"],[471,-99,"#bbbbbb"],[742,-79,"#ffffff"],[749,-80,"#103af5"],[743,-69,"#29d78c"],[1147,133,"#55bbcc"],[1146,904,"#ffffff"]],{region:[888+xoff,109,30,21],threshold:20});
+                var refresh = FindMultiColors("#ffffff",[[427,-4,"#ffffff"],[625,1,"#ffffff"],[471,-99,"#bbbbbb"],[742,-79,"#ffffff"],[749,-80,"#103af5"],[743,-69,"#29d78c"],[1147,133,"#55bbcc"],[1146,904,"#ffffff"]],{region:[888+xoff,109,30,21],threshold:30});
                     
                 if (!refresh) {
                     log("not found refresh");
